@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8139823456868894932
+--- !u!1 &8089437792566420222
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4451726827232646459}
-  - component: {fileID: 5566456543889056111}
-  - component: {fileID: 8993568715535941431}
-  - component: {fileID: 373039284749531155}
-  - component: {fileID: -8923543128142202256}
+  - component: {fileID: 7370708233419081408}
+  - component: {fileID: 4680316003600631081}
+  - component: {fileID: 3021291299486810198}
+  - component: {fileID: 3664435154490094436}
+  - component: {fileID: 305423807547631611}
+  - component: {fileID: 2017146587141833355}
   m_Layer: 0
-  m_Name: Sphere
-  m_TagString: Finish
+  m_Name: Cube
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4451726827232646459
+--- !u!4 &7370708233419081408
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8139823456868894932}
+  m_GameObject: {fileID: 8089437792566420222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -25.338074, y: 0.53, z: 7.510494}
+  m_LocalPosition: {x: 8.882593, y: 23.960997, z: 8.006789}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5566456543889056111
+--- !u!33 &4680316003600631081
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8139823456868894932}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8993568715535941431
+  m_GameObject: {fileID: 8089437792566420222}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &3021291299486810198
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8139823456868894932}
+  m_GameObject: {fileID: 8089437792566420222}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -85,26 +86,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &373039284749531155
-SphereCollider:
+--- !u!65 &3664435154490094436
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8139823456868894932}
+  m_GameObject: {fileID: 8089437792566420222}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-8923543128142202256
+--- !u!54 &305423807547631611
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8139823456868894932}
+  m_GameObject: {fileID: 8089437792566420222}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -114,3 +115,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2017146587141833355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8089437792566420222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d5debcf90da57f4b91f73d169ccfc92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefab: {fileID: 195792, guid: 1911d89758d97cc4898d240e9e2545f4, type: 3}
+  tankLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  damage: 5
+  explosionForce: 1000
+  maxShellLifeTime: 2
+  explosionRadius: 5

@@ -50,6 +50,11 @@ PrefabInstance:
       propertyPath: tankControls.fireButton
       value: 305
       objectReference: {fileID: 0}
+    - target: {fileID: 491440104372762008, guid: 268f946728390b64db521f40f31a4a70,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 491440104372762009, guid: 268f946728390b64db521f40f31a4a70,
         type: 3}
       propertyPath: m_Constraints
@@ -68,7 +73,7 @@ PrefabInstance:
     - target: {fileID: 491440104372762015, guid: 268f946728390b64db521f40f31a4a70,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 2328160367199845525, guid: 268f946728390b64db521f40f31a4a70,
         type: 3}

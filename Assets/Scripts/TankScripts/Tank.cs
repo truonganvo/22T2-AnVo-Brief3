@@ -36,7 +36,7 @@ public class Tank : MonoBehaviour
     void Start()
     {   
         tankHealth.SetUp(transform); // call the set up function of our tank health script
-        tankMovement.SetUp(transform); // calls the set up function of our tank health script
+        tankMovement.SetUp(transform); // calls the set up function of our tank movement script
         tankMainGun.SetUp(); // calls the set up function of our tank main gun script
 
         if(enableTankMovement)

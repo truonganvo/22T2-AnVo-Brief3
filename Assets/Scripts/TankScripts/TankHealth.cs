@@ -16,7 +16,6 @@ public class TankHealth
     public Color fullHealthColour = Color.green; // our full health colour
     public Color zeroHealthColour = Color.red; // colour of no health
     private Transform tankParent; // reference to the tank that this script is attached to
-
     public float CurrentHealth
     {
         get
@@ -79,7 +78,6 @@ public class TankHealth
             }
         }
         CurrentHealth = maxHealth; // set our current health to max health
-
     }
 
     /// <summary>

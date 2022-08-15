@@ -14,12 +14,6 @@ namespace AnVo
 
         float lastSpawnTime;
 
-        //private void OnTriggerEnter(Collider other)
-        //{
-            //Vector3 randomPos = new Vector3(Random.Range(-40, 40), 30, Random.Range(-40, 40));
-            //Instantiate(meteorFall, randomPos, Quaternion.identity);
-        //} > This is not optimal design
-
         public void Update()
         {
             if (Time.time > lastSpawnTime + frequency)

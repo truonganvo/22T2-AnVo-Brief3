@@ -8,17 +8,20 @@ public class ModifiedShells : MonoBehaviour
     public float damage = 5; // the maximum amount of damage that my shell can do.
     public float maxShellLifeTime = 2; // how long should the shell live for before it goes boom!
 
-    private void OnCollisionEnter(Collision collision)
+    public delegate void AnnouceEnviron();
+    public static AnnouceEnviron playerNumber;
+
+    private void OnTriggerEnter(Collider other)
     {
         Boom();
-        if (collision.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("I hit the player!!");
+            other.gameObject.GetComponent<Tank>().tankHealth.CurrentHealth -= damage;
         }
+
     }
-    /// <summary>
-    /// Called when the shell has hit an object in our scene
-    /// </summary>
+
+    // Called when the shell has hit an object in our scene
     private void Boom()
     {
         // spawn in our explosion effect

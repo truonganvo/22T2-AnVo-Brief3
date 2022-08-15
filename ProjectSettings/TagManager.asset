@@ -4,10 +4,10 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Volcano
   - Objects
   - Bullet
   - Enemy
+  - Cube
   layers:
   - Default
   - TransparentFX

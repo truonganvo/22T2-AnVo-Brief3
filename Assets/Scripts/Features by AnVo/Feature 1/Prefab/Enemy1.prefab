@@ -261,8 +261,8 @@ GameObject:
   - component: {fileID: 491440104372762009}
   - component: {fileID: 491440104372762008}
   - component: {fileID: 335891108}
-  - component: {fileID: -1679866281558464328}
-  m_Layer: 14
+  - component: {fileID: 734723681020562405}
+  m_Layer: 8
   m_Name: Enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -414,7 +414,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-1679866281558464328
+--- !u!114 &734723681020562405
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -426,8 +426,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33002f226d3c2844db87ff0abf5ecb56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTank: {fileID: 2598633211480631984, guid: aba5dc34144335c43a163d644929c642,
+  playerTank: {fileID: 2786163784148145521, guid: aba5dc34144335c43a163d644929c642,
     type: 3}
+  aiTank: {fileID: 0}
 --- !u!1 &2328160366355997736
 GameObject:
   m_ObjectHideFlags: 0

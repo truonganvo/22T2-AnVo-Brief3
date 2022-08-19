@@ -261,7 +261,8 @@ GameObject:
   - component: {fileID: 491440104372762009}
   - component: {fileID: 491440104372762008}
   - component: {fileID: 335891108}
-  - component: {fileID: -5365181305807314481}
+  - component: {fileID: 3765029578665848760}
+  - component: {fileID: -6685486313734591895}
   m_Layer: 14
   m_Name: Enemy2
   m_TagString: Enemy
@@ -414,7 +415,52 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-5365181305807314481
+--- !u!114 &3765029578665848760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 491440104372762015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dcbc84631449394fa06a2c1f68ed15a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableTankMovement: 0
+  playerNumber: 0
+  tankControls:
+    forward: 119
+    backwards: 115
+    left: 97
+    right: 100
+    fireButton: 32
+  tankHealth:
+    minHealth: 0
+    maxHealth: 100
+    isDead: 1
+    fullHealthColour: {r: 0, g: 1, b: 0, a: 1}
+    zeroHealthColour: {r: 1, g: 0, b: 0, a: 1}
+    healthSlider: {fileID: 0}
+  tankMovement:
+    speed: 12
+    turnSpeed: 180
+    tankSoundEffects:
+      tankIdleSound: {fileID: 0}
+      tankMovingSound: {fileID: 0}
+      pitchRangeMax: 0.2
+  tankMainGun:
+    mainGunTransform: {fileID: 0}
+    tankShellPrefab: {fileID: 0}
+    minLaunchForce: 15
+    maxLaunchForce: 30
+    maxChargeTime: 0.75
+    mainGunArrowIndicator: {fileID: 0}
+    weaponSystemSource: {fileID: 0}
+    chargingSFX: {fileID: 0}
+    firingSFX: {fileID: 0}
+  explosionPrefab: {fileID: 0}
+--- !u!114 &-6685486313734591895
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -426,8 +472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33002f226d3c2844db87ff0abf5ecb56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTank: {fileID: 7608682375549412814, guid: a504c6c563098ec4f9c3c8dd35ce8250,
-    type: 3}
+  playerTank: {fileID: 0}
   aiTank: {fileID: 0}
 --- !u!1 &2328160366355997736
 GameObject:

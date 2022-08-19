@@ -2,20 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DetectingIncomeBullet : MonoBehaviour
+namespace AnVo
 {
-    public GameObject Object;
-    public float healthPoint;
-    private GameObject bulletIncoming;
-    private void OnTriggerEnter(Collider other)
+    public class DetectingIncomeBullet : MonoBehaviour
     {
-        bulletIncoming = GameObject.FindGameObjectWithTag("Bullet");
-        Destroy(bulletIncoming);
+        public GameObject Object;
+        public float healthPoint;
+        private GameObject bulletIncoming;
 
-        healthPoint -= 10f;
-        if (healthPoint <= 0)
+        public delegate void DestroyedBuilding();
+        public static DestroyedBuilding Remains;
+        public int buildingAmount = 20;
+        private void OnTriggerEnter(Collider other)
         {
-          Destroy(Object);
+            bulletIncoming = GameObject.FindGameObjectWithTag("Bullet");
+            Destroy(bulletIncoming);
+
+            healthPoint -= 10f;
+            if (healthPoint <= 0)
+            {
+                Destroy(Object);
+                if (Remains != null)
+                {
+                    Remains();
+                }
+            }
+        }
+
+        private void OnEnable()
+        {
+            Remains += CollideBuilding;
+        }
+
+        private void OnDisable()
+        {
+            Remains -= CollideBuilding;
+        }
+
+        private void CollideBuilding()
+        {
+            buildingAmount -= 1;
+            Debug.Log("Number of building remains: " + buildingAmount);
         }
     }
 }
+

@@ -23,9 +23,6 @@ public class Tank : MonoBehaviour
         TankGameEvents.OnObjectDestroyedEvent += Dead; // add dead function to the event for when a tank is destroyed
         TankGameEvents.OnObjectTakeDamageEvent += TankTakenDamage; // assign our health function to our event so we can take damage
         TankGameEvents.OnGameStartedEvent += EnableInput; // assign our tank movement function to the game started event
-        ///Add-on Event by AnVo
-        ModifiedShells.playerNumber += AnnouceFallEvent;
-
     }
 
     private void OnDisable()
@@ -33,8 +30,6 @@ public class Tank : MonoBehaviour
         TankGameEvents.OnObjectDestroyedEvent -= Dead; // add dead function to the event for when a tank is destroyed
         TankGameEvents.OnObjectTakeDamageEvent -= TankTakenDamage; // assign our health function to our event so we can take damage
         TankGameEvents.OnGameStartedEvent -= EnableInput; // assign our tank movement function to the game started event
-        ///Add-on Event by AnVo
-        ModifiedShells.playerNumber -= AnnouceFallEvent;
     }
 
     // Start is called before the first frame update
@@ -87,12 +82,6 @@ public class Tank : MonoBehaviour
             Debug.Log("Damage applied?" + AmountOfDamage);
             tankHealth.ApplyHealthChange(AmountOfDamage);
         }
-    }
-
-    //Additional Modify by AnVo
-    private void AnnouceFallEvent()
-    {
-        Debug.Log("Player Number " + playerNumber + ". Taken 5 damage from the Meteor");
     }
 
     /// <summary>

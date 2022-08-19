@@ -5,11 +5,10 @@ using UnityEngine;
 public class ModifiedShells : MonoBehaviour
 {
     public GameObject explosionPrefab; // the explosion we want to spawn in
-    public float damage = 5; // the maximum amount of damage that my shell can do.
-    public float maxShellLifeTime = 2; // how long should the shell live for before it goes boom!
+    public float damage = 5; 
 
-    public delegate void AnnouceEnviron();
-    public static AnnouceEnviron playerNumber;
+    public delegate void TankRegister();
+    public static event TankRegister HitTank;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -17,6 +16,7 @@ public class ModifiedShells : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<Tank>().tankHealth.CurrentHealth -= damage;
+            HitTank();
         }
 
     }
@@ -26,8 +26,22 @@ public class ModifiedShells : MonoBehaviour
     {
         // spawn in our explosion effect
         GameObject clone = Instantiate(explosionPrefab, transform.position, explosionPrefab.transform.rotation);
-        Destroy(clone, maxShellLifeTime);
 
+    }
+
+    private void OnEnable()
+    {
+        HitTank += TrackingHit;
+    }
+
+    private void OnDisable()
+    {
+        HitTank -= TrackingHit;
+    }
+
+    private void TrackingHit()
+    {
+        Debug.Log("A 'Meteor' has hit a tank!");
     }
 }
 
